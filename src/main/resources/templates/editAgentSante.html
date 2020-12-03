@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="template1">
+    <head>
+        <title>Agent</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" src="webjars/jquery/3.2.0/jquery.min.js"></script>
+        <script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="webjars/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div th:replace="template1 :: header"></div>
+
+        <div layout:fragment="content" class="container"><h1></h1>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Edition Agent</div>
+                    <div class="panel-body">
+                        <form th:action="@{saveAgentSante}"  method="post">
+                            <div class="form-group">
+                                <label class="control-label">fonction:</label>
+                                <input class="form-control" type="text" name="nom" th:value="${agent-santes.fonction}"/>
+                                <span class="text-danger" th:errors="${agent-santes.fonction}"></span>
+                            </div>
+
+                            <button class="btn btn-primary" type="submit">Save</button>
+                        </form>
+
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

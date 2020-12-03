@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="template1">
+    <head>
+        <title>Personne</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" src="webjars/jquery/3.2.0/jquery.min.js"></script>
+        <script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="webjars/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div th:replace="template1 :: header"></div>
+
+        <div layout:fragment="content" class="container"><h1></h1>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Edition Personne</div>
+                    <div class="panel-body">
+                        <form th:action="@{savePersonne}"  method="post">
+                            <div class="form-group">
+                                <label class="control-label">Nom:</label>
+                                <input class="form-control" type="text" name="nom" th:value="${personnes.nom}"/>
+                                <span class="text-danger" th:errors="${personnes.nom}"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Prenom:</label>
+                                <input class="form-control" type="text" name="prenom" th:value="${personnes.prenom}"/>
+                                <span class="text-danger" th:errors="${personnes.prenom}"></span> 
+                          </div>
+                             <div class="form-group">
+                                <label class="control-label">Adresse:</label>
+                                <input class="form-control" type="text" name="adresse" th:value="${personnes.adresse}"/>
+                                <span class="text-danger" th:errors="${personnes.adresse}"></span> 
+                            </div>
+                             <div class="form-group">
+                                <label class="control-label">Sexe:</label>
+                                <input class="form-control" type="text" name="sexe" th:value="${personnes.sexe}"/>
+                                <span class="text-danger" th:errors="${personnes.sexe}"></span> 
+                            </div>
+                             <div class="form-group">
+                                <label class="control-label">Date Naissance:</label>
+                                <input class="form-control" type="text" name="Date Naissance" th:value="${personnes.date naissance}"/>
+                                <span class="text-danger" th:errors="${personnes.date naissance}"></span> 
+                            </div>
+                            <button class="btn btn-primary" type="submit">Save</button>
+                        </form>
+
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
