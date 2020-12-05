@@ -25,32 +25,32 @@ and open the template in the editor.
                 <div class="panel panel-primary">
                     <div class="panel-heading">Edition Personne</div>
                     <div class="panel-body">
-                        <form th:action="@{savePersonne}"  method="post">
+                        <form th:action="@{/personnes/edit/save}"  method="post">
                             <div class="form-group">
                                 <label class="control-label">Nom:</label>
-                                <input class="form-control" type="text" name="nom" th:value="${personnes.nom}"/>
-                                <span class="text-danger" th:errors="${personnes.nom}"></span>
+                                <input class="form-control" type="text" name="nom" th:value="${personne.nom}"/>
+                                <span class="text-danger" th:errors="${personne.nom}"></span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Prenom:</label>
-                                <input class="form-control" type="text" name="prenom" th:value="${personnes.prenom}"/>
-                                <span class="text-danger" th:errors="${personnes.prenom}"></span> 
+                                <input class="form-control" type="text" name="prenom" th:value="${personne.prenom}"/>
+                                <span class="text-danger" th:errors="${personne.prenom}"></span>
                           </div>
                              <div class="form-group">
                                 <label class="control-label">Adresse:</label>
-                                <input class="form-control" type="text" name="adresse" th:value="${personnes.adresse}"/>
-                                <span class="text-danger" th:errors="${personnes.adresse}"></span> 
+                                <input class="form-control" type="text" name="adresse" th:value="${personne.adresse}"/>
+                                <span class="text-danger" th:errors="${personne.adresse}"></span>
                             </div>
                              <div class="form-group">
                                 <label class="control-label">Sexe:</label>
-                                <input class="form-control" type="text" name="sexe" th:value="${personnes.sexe}"/>
-                                <span class="text-danger" th:errors="${personnes.sexe}"></span> 
+                                <input class="form-control" type="text" name="sexe" th:value="${personne.sexe}"/>
+                                <span class="text-danger" th:errors="${personne.sexe}"></span>
                             </div>
-                             <div class="form-group">
-                                <label class="control-label">Date Naissance:</label>
-                                <input class="form-control" type="text" name="Date Naissance" th:value="${personnes.date naissance}"/>
-                                <span class="text-danger" th:errors="${personnes.date naissance}"></span> 
-                            </div>
+<!--                             <div class="form-group">-->
+<!--                                <label class="control-label">Date Naissance:</label>-->
+<!--                                <input class="form-control" type="text" name="Date Naissance" th:value="${personne.dateNaissance}"/>-->
+<!--                                <span class="text-danger" th:errors="${personne.dateNaissance}"></span>-->
+<!--                            </div>-->
                             <button class="btn btn-primary" type="submit">Save</button>
                         </form>
 
