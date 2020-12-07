@@ -14,8 +14,6 @@ import com.project.etatcivil.services.PersonneService;
 public class PersonneController {
 	private PersonneService personneService;
 
-
-
     @RequestMapping(value ="/personnes/edit")
 	public String edit(Model model, Long id) {
 		Personne personne = new Personne();

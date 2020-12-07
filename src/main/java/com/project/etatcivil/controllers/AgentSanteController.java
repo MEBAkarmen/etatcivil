@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.etatcivil.entity.AgentSante;
@@ -35,17 +36,17 @@ private AgentSanteService agentSanteService;
 	}
 	
 	
-	@PostMapping(value = "/agent-santes/edit/save")
+	@PostMapping(value ="/agent-santes/edit/save")
 	public String saveEdit(BindingResult bindingResult, @RequestBody AgentSante agentSante) {
 		if(bindingResult.hasErrors()) {
 			return "editAgentSante";
 		}
 		
 		agentSanteService.create(agentSante);
-		return "redirect:/personnes/list";
+		return "redirect:/agent-santes/list";
 	}
 	
-	@GetMapping(value = "/agent-santes/list")
+	@GetMapping(value ="/agent-santes/list")
 	public String listAgentService(Model model, 
 									@RequestParam(name = "page", defaultValue = "0") int page, 
 									@RequestParam(name = "size", defaultValue = "20") int size) {
